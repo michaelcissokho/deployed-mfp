@@ -1,0 +1,48 @@
+{%extends 'base.html' %}
+{%block content%}
+    <div id = 'description'>
+        <form method="POST" class='tickerForm'>
+            <input type="text" name='ticker' placeholder='Enter Ticker Here'>
+            <input type="submit" value="submit">
+        </form>  
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class = 'col-sm-5 float-left' id="recent">
+
+            </div>
+            <div class="col-sm-7 float-right" id = 'profile'>
+
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <div class="container" id = 'tickerData'>
+        <!-- 'container-fluid' class allows for data to be fluid in the page -->
+        <div class="row">
+            <div id = 'keyFinancials'></div>
+            <!-- putting the class row makes all the values contained within this div adjust to each other to evenly space out on page -->
+            <div class = 'col border' id = 'incomeStatement'>
+                <!-- div section where 'handleIncomeStatement' function in script.js will send its orders to add data here-->
+                <!-- 'col' class gives it 1/3 of page -->
+                
+            </div>
+        
+            <div class = 'col border' id = 'balanceSheet'>
+                <!-- div section where 'handleBalanceSheet' function in script.js will send its orders to add data here-->
+                
+            </div>
+        
+            <div class = 'col border' id = 'cashFlowStatement'>
+                <!-- div section where 'handleCashFlowStatement' function in script.js will send its orders to add data here -->
+                
+            </div>
+        </div>
+    </div>
+
+{%endblock%}
+
+{% block javascripts %}
+<script src="{{url_for('static', filename='ticker.js')}}"></script>
+{%endblock%}

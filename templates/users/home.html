@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{%block content%}
+
+<h1> Homepage: Michael's Financial Platform</h1>
+<br><br><br><br>
+
+<div class="container">
+    <div class="row">
+        <div class = 'col-sm-5' id = 'dailyClose'>
+    
+        </div>
+        <div class="col-sm-7" id = 'news'>
+            <h2> News:</h2>
+    
+        </div>
+    </div>
+</div>
+
+
+
+<div class = 'container' id = 'homepage'>
+    <div class="row">
+        <div class="col border" id = 'DJI'>
+
+        </div>
+        <div class="col border" id="SP500">
+
+        </div>
+        <div class="col border" id="NASDAQ">
+
+        </div>
+    </div>
+</div>
+
+{%endblock%}
+
+{%block javascripts %}
+<script src="{{url_for('static', filename='home.js')}}"></script>
+{%endblock%}
