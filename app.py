@@ -338,15 +338,15 @@ def page_not_found(e):
     return render_template('/users/404.html')
 
 
-##############################################################################
-# Turn off all caching in Flask
+# ##############################################################################
+# # Turn off all caching in Flask
 
-@app.after_request
-def add_header(req):
-    """Add non-caching headers on every request."""
+# @app.after_request
+# def add_header(req):
+#     """Add non-caching headers on every request."""
 
-    req.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
-    req.headers["Pragma"] = "no-cache"
-    req.headers["Expires"] = "0"
-    req.headers['Cache-Control'] = 'public, max-age=0'
-    return req
+#     req.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+#     req.headers["Pragma"] = "no-cache"
+#     req.headers["Expires"] = "0"
+#     req.headers['Cache-Control'] = 'public, max-age=0'
+#     return req
