@@ -1,0 +1,19 @@
+{%extends 'base.html'%}
+
+{% block content %}
+<div class="mx-auto col-sm-5">
+  <h4>Post Creation</h4>
+  <h6>To submit a post, fill out the form below</h6>
+  <form method="POST" id="message_form">
+    {{ form.hidden_tag() }}
+
+    {% for field in form if field.widget.input_type != 'hidden' %}
+      {% for error in field.errors %}
+        <span class="text-danger">{{ error }}</span>
+      {% endfor %}
+      {{ field(placeholder=field.label.text, class="form-control") }}
+    {% endfor %}
+    <button class="btn btn-success btn-block btn-lg">Submit</button>
+  </form>
+</div>
+{%endblock%}
