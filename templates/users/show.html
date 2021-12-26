@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1> Welcome {{user.username}} !</h1>
+
+<div class = 'col-sm-2'>
+    <form action="/users/edit" method ="GET">
+        <button class="btn btn-warning btn-block btn-sm"> Edit Your Account </button>
+    </form>
+</div>
+
+
+<h3> Your Posts: </h3>
+
+{%for post in messages%}
+<div class="mx-auto col-sm-5">
+    <h3><u> {{post.title}}</u></h3>
+    <h6>{{post.ticker}}</h6>
+    <p>{{post.timestamp}}</p>
+    <p class = 'col border'>{{post.text}}</p>
+    <form action="/messages/{{post.id}}/delete" method ="POST">
+        <button class = 'btn btn-danger btn-block btn-lg'> Delete Post</button>
+    </form>
+</div>
+<br><br>
+{%endfor%}
+
+{% endblock %}
